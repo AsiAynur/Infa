@@ -1,19 +1,19 @@
-//Напишите функцию, которая называется Factorial, возвращает int принимает int и возвращает факториал своего аргумента.
-//Гарантируется, что аргумент функции по модулю не превышает 10. Для отрицательных аргументов функция должна возвращать 1.
+
 #include <iostream>
 using namespace std;
 
-int main()
-{
-  int n, i, a;
-  cin >> n;
-  if ( n < 0)
-	  return 1;
-  a = 1;
-  for (i = 1; i <= n; i++) {
-	a = a * i;
-  }
-  cout << a << endl;
-
+int factorial(int N) {
+	if (N < 0)
+		return 0;
+	if (N == 0)
+		return 1;
+	else
+		return N * factorial(N-1);
 }
 
+int main () {
+	int N;
+	cin >> N;
+	cout << factorial(N) << endl;
+return 0;
+}
